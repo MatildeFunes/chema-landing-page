@@ -625,21 +625,7 @@ RESPONSIVE
 
     .hero {
         background-attachment: scroll; 
-        background-position: 70% center; 
-    }
-
-    .hero-content {
-        width: 85%; /* Para que el cuadro de texto no toque los bordes */
-        padding: 2rem 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem; /* Achicamos el título para que no se rompa */
-        letter-spacing: 2px;
-    }
-
-    .hero p {
-        font-size: 1rem;
+        background-position: 50% center; 
     }
 
     .section {
