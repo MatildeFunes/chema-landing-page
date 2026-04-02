@@ -19,54 +19,68 @@
 <body>
     <!--Hero-->
     <header class="hero">
+
+        <nav class="navbar">
+    <div class="nav-logo">CHEMA</div>
+    
+    <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links">
+        <li><a href="#contenido">Estampa Botánica</a></li>
+        <li><a href="#pintura">Arte Contemporáneo</a></li>
+        <li><a href="#totes">Totes</a></li>
+        <li><a href="#ferias">Experiencias</a></li>
+        <li><a href="#tienda" class="nav-tienda">TIENDA</a></li>
+    </ul>
+        </nav>
         <div class="hero-content">
-        <h1>Chema ES DAR</h1>
-        <p>Prendas únicas creadas con procesos naturales y artísticos</p>
+        <h1>Obras téxtiles que se habitan, creadas con procesos naturales y artísticos</h1>
+        <!---<p>Prendas únicas creadas con procesos naturales y artísticos</p>--->
 
         <a href="#contenido" class="hero-btn">Conocer más</a>
         </div>
     </header>
 
     <!--Prendas con botánica-->
-    <section class="section botanica" id="contenido">
+    <section class="section-autor botanica" id="contenido">
         <div class="text">
-            <h2>La naturaleza impresa en cada prenda</h2>
+            <h2>La naturaleza impresa en cada pieza</h2>
             <p>
                 Cada planta que utilizamos en nuestros estampados botánicos tiene su propia historia, energía y simbolismo.
                 De la fuerza purificadora de la jarilla a la renovación del eucalipto, cada una deja su esencia en los tejidos, convirtiendo cada 
-                prenda en un encuentro con la tierra.
+                intervención en un encuentro con la tierra.
             </p>
         </div>
-        
-        <div class="galeria">
-            <img src="Botanica/hojasazulescerca.jpg" alt="Prenda botánica">
-            <img src="Botanica/perchaysombrero.jpg" alt="Prenda botánica">
-            <img src="Botanica/perchayhojas.jpg" alt="Prenda botánica">
-            <img src="Botanica/imgperchero.jpg" alt="Prenda botánica">
-        </div>    
+
+
+    <div class="img-representativa">
+        <img src="Botanica/imghojascerca.jpg" alt="Pieza botánica representativa">
+    </div>   
     </section>
 
     <!--Prendas con pintura-->
-    <section class="section pintura">
+    <section class="section-autor pintura" id="pintura">
         <div class="text">
-            <h2>Cuando el arte se vuelve prenda</h2>
+            <h2>Cuando el arte se vuelve pieza</h2>
             <p>
             Cada trazo, cada color y cada textura cuentan una historia. La pintura
-            trasciende el lienzo y se transforma en tela, dando vida a prendas únicas que llevan el alma del arte en cada fibra.
+            trasciende el lienzo y se transforma en tela, dando vida a ediciones únicas que llevan el alma del arte en cada fibra.
             En chema el arte no se cuelga, se viste.
             </p>
         </div>
 
-        <div class="galeria">
-            <img src="Pintura/remeraspercha.jpg" alt="Prenda pintada">
-            <img src="Pintura/remerapuesta.jpg" alt="Prenda pintada">
-            <img src="Pintura/Screenshot_20260104_124606_Instagram~2.jpg" alt="Prenda pintada">
-            <img src="Pintura/Screenshot_20260104_124654_Instagram~2.jpg" alt="Prenda pintada">
-        </div>
-    </section>
+
+    <div class="img-representativa">
+        <img src="Pintura/remerapuesta.jpg" alt="Pieza de arte representativa">
+    </div> 
+</section>
 
     <!--Tote bags-->
-    <section class="section totes">
+    <section class="section-autor totes" id="totes">
         <div class="text">
             <h2>Tote Bags Artesanales</h2>
             <p>
@@ -78,20 +92,16 @@
             </p>
         </div>
 
-        <div class="galeria-totes">
-            <img src="TOTE BAGS/totebotanica1.jpg" alt="Tote Bag">
-            <img src="TOTE BAGS/totebotanica2.jpg" alt="Tote Bag">
-            <img src="TOTE BAGS/totepint1.jpg" alt="Tote Bag">
-            <img src="TOTE BAGS/totepint2.jpg" alt="Tote Bag">
-            <img src="TOTE BAGS/totepint3.jpg" alt="Tote Bag">
-            <img src="TOTE BAGS/totepint4.jpg" alt="Tote Bag">
-        </div>
+
+    <div class="img-representativa">
+        <img src="TOTE BAGS/TOTESSSS.jpg" alt="Tote Bag representativa">
+    </div>
     </section>
 
     <!--FERIAS-->
-    <section class="section ferias">
+    <section class="section ferias" id="ferias">
         <div class="contenido-ferias">
-            <h2>Ferias y Encuentros</h2>
+            <h2>Experiencias</h2>
             <p> Chema también vive en el intercambio, la música, el arte y el encuentro
             con otras personas creadoras.
             </p>
@@ -112,6 +122,143 @@
             </video>
         </div>
     </section>
+
+
+    <section id="tienda" class="section-tienda">
+        <h2>Tienda CHEMA</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="TIENDA/Amanecer forestal.jpg" alt="Producto 1" loading="lazy">
+                <h3>Amanecer Forestal</h3>
+                <span class="precio">$30.000</span>
+                <button class="btn-add" onclick="agregarAlCarrito('Amanecer Forestal')">Agregar</button>
+            </div>
+        
+
+            <div class="producto-card">
+        <img src="TIENDA/Amanecer textil - Copy.jpg" alt="Producto 2" loading="lazy">
+        <h3>Amanecer textil</h3>
+        <span class="precio">$35.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Amanecer textil')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Camino de helechos.jpg" alt="Producto 2" loading="lazy">
+        <h3>Camino de helechos</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Camino de helechos')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Conjunto Botánica - Copy.jpg" alt="Producto 2" loading="lazy">
+        <h3>Conjunto Botánica</h3>
+        <span class="precio">$80.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Conjunto Botánica')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Constelación terrenal.jpg" alt="Producto 2" loading="lazy">
+        <h3>Constelación Terrenal</h3>
+        <span class="precio">$30.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Constelación Terrenal')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Cosecha de Otoño - Copy.jpg" alt="Producto 2" loading="lazy">
+        <h3>Cosecha de Otoño</h3>
+        <span class="precio">$35.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Cosecha de Otoño')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Fragmento en Tierra - Copy.jpg" alt="Producto 2" loading="lazy">
+        <h3>Raíz Distorsionada</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Raíz Distorsionada')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Fragmentos de Tierra.jpg" alt="Producto 2" loading="lazy">
+        <h3>Fragmentos de Tierra</h3>
+        <span class="precio">$35.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Fragmentos de Tierra')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Fuego interior - Copy.jpg" alt="Producto 2" loading="lazy">
+        <h3>Fuego Interior</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Fuego Interior')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Jardín colgante.jpg" alt="Producto 2" loading="lazy">
+        <h3>Jardín colgante</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Jardín colgante')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Jardín de Espirales.jpg" alt="Producto 2" loading="lazy">
+        <h3>Jardín de Espirales</h3>
+        <span class="precio">$30.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Jardín de Espirales')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Jardín encendido.jpg" alt="Producto 2" loading="lazy">
+        <h3>Tote Jardín Encendido</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Tote Jardín Encendido')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Pasion abstracta.jpg" alt="Producto 2" loading="lazy">
+        <h3>Pasión Abstracta</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Pasión Abstracta')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Raíz Silvestre.jpg" alt="Producto 2" loading="lazy">
+        <h3>Tote Raíz Silvestre</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Tote Raíz Silvestre')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Sol Marchito.jpg" alt="Producto 2" loading="lazy">
+        <h3>Sol Marchito</h3>
+        <span class="precio">$40.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Sol Marchito')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Soplo de Coral.jpg" alt="Producto 2" loading="lazy">
+        <h3>Soplo de Coral</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Soplo de Coral')">Agregar</button>
+            </div>
+
+            <div class="producto-card">
+        <img src="TIENDA/Viento del norte - Copy.jpg" alt="Producto 2" loading="lazy">
+        <h3>Viento del Norte</h3>
+        <span class="precio">$50.000</span>
+        <button class="btn-add" onclick="agregarAlCarrito('Viento del Norte')">Agregar</button>
+            </div>
+    </div>
+
+        <div id="carrito-flotante" class="carrito-resumen">
+            <h3>🛒 Seleccionados:</h3>
+        <ul id="lista-carrito">
+        </ul>
+        <p>Total items: <span id="cant-items">0</span></p>
+        <button onclick="enviarWhatsApp()" class="btn-whatsapp-compra">Pedir por WhatsApp</button>
+        <button onclick="cerrarCarrito()" class="btn-cerrar">Cerrar</button>
+            <!--<p>🛒 Seleccionados: <span id="cant-items">0</span></p>
+            <button onclick="enviarWhatsApp()" class="btn-whatsapp-compra">Pedir por WhatsApp</button>-->
+        </div>
+</section>
 
     <!--Footer-->
 <footer class="footer">

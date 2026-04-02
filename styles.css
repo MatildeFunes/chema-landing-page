@@ -53,7 +53,7 @@ HERO
  */
 .hero {
     min-height: 100vh;
-    background: url("Hero.png") center/cover no-repeat;
+    background: url("hero6.jpeg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,12 +66,106 @@ HERO
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
-.hero p {
+/*.hero p {
     font-size: 1.1rem;
+}*/
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8vw;
+    background: rgba(247, 245, 240, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
 }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--gris);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-tienda {
+    color: var(--terracota) !important;
+    font-weight: 600 !important;
+}
+
+
+/*Menu hamburguesa*/
+.menu-toggle {
+    display: none; /* Escondido en PC */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--gris);
+    transition: all 0.3s ease;
+}
+
+/*RESPONSIVE celu*/
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Aparece en móvil */
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Escondido a la derecha */
+        top: 0;
+        height: 100vh;
+        width: 70%; /* Ocupa gran parte de la pantalla */
+        background-color: var(--blanco);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+        z-index: 1000;
+    }
+
+    /* Clase que se activa con JS */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Animación de la hamburguesa a una 'X' */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
 
 /* BOTÓN HERO */
 .hero-btn {
@@ -91,9 +185,66 @@ HERO
     color: var(--blanco);
 }
 
-/* 
-SECCIONES
- */
+/* SECCIONES DE AUTOR (Botánica, Pintura, Totes)*/
+
+/* Estilo Base para las tres secciones */
+.section-autor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 6rem 8vw;
+    width: 100%;
+}
+
+/* 1. BOTÁNICA: Fondo Arena y Título Verde */
+.botanica {
+    background-color: var(--arena);
+}
+
+.botanica h2 {
+    color: var(--verde);
+}
+
+/* 2. PINTURA: Fondo Blanco, Título Terracota y Dirección Inversa */
+.pintura {
+    background-color: var(--blanco);
+    flex-direction: row-reverse; /* Esto reemplaza el direction: rtl para que la imagen quede a la izquierda */
+}
+
+.pintura h2 {
+    color: var(--terracota);
+}
+
+/* 3. TOTES: Fondo Arena */
+.totes {
+    background-color: var(--arena);
+}
+
+.totes h2{
+    color: var(--verde);
+}
+
+/* --- ELEMENTOS INTERNOS --- */
+
+.section-autor .text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.section-autor h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-autor p {
+    max-width: 100%; /* Permitimos que ocupe el ancho de su contenedor de texto */
+    line-height: 1.8;
+}
+
+
+/*SECTION*/
 .section {
     display: flex;
     gap: 2rem;
@@ -105,38 +256,10 @@ SECCIONES
     margin-bottom: 1rem;
 }
 
-/* COLORES POR SECCIÓN */
-.botanica {
-    background-color: var(--arena);
-}
-
-.botanica h2 {
-    color: var(--verde);
-}
-
-.pintura {
-    background-color: var(--blanco);
-    direction: rtl; 
-}
-
-.pintura .text, .pintura .galeria {
-        direction: ltr; /* Devuelve el texto a su dirección normal */
-    }
-
-
-.pintura h2 {
-    color: var(--terracota);
-}
-
-.totes {
-    background-color: var(--arena);
-    flex-direction: column;
-}
-
 /* 
 GALERÍAS (COMÚN)
 */
-.galeria {
+/*.galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.2rem;
@@ -151,17 +274,34 @@ GALERÍAS (COMÚN)
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
+}*/
+
+/* IMAGEN ÚNICA REPRESENTATIVA */
+.img-representativa {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
 }
 
-.galeria img:hover,
-.galeria-totes img:hover {
-    transform: scale(1.03);
+.img-representativa img {
+    width: 100%;
+    max-width: 450px; /* Tamaño controlado para no saturar */
+    height: 550px;    /* Altura elegante */
+    object-fit: cover;
+    border-radius: 4px; /* Bordes más netos/artísticos */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.5s ease;
 }
+
+.img-representativa img:hover {
+    transform: scale(1.02);
+}
+
 
 /*
 GALERÍA TOTES
  */
-.galeria-totes {
+/*.galeria-totes {
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -171,13 +311,17 @@ GALERÍA TOTES
 
 .galeria-totes img{
     max-width: 220px;
-}
+}*/
 
 /* 
 FERIAS - VIDEOS
 */
 .ferias {
     background-color: var(--blanco);
+}
+
+.ferias h2{
+    color: var(--terracota);
 }
 
 .contenido-ferias {
@@ -211,6 +355,208 @@ FERIAS - VIDEOS
 .feria-video.active {
     opacity: 1;
 }
+
+/* GRILLA DE TIENDA */
+.section-tienda {
+    padding: 4rem 8vw;
+    text-align: center;
+    background-color: var(--blanco);
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.producto-card {
+    /*background: #fff;
+    border: 1px solid var(--arena);
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Para que todas midan lo mismo en la misma fila */
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--arena);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 25px;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 180px; 
+    object-fit: contain;
+    background-color: #f9f9f9; 
+    padding: 10px; /* Espacio para que la foto respire dentro del cuadro */
+    /*border-radius: 6px;*/
+}
+
+.info-prod {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.producto-card h3 { 
+    /*font-size: 0.9rem;
+    margin: 10px 0;*/
+    font-size: 0.9rem;
+    color: var(--gris);
+    /*margin-bottom: 8px;*/
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    min-height: 2.4em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 0;
+    width: 100%;
+}
+.precio { 
+    /*color: var(--terracota);
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;*/
+    color: var(--terracota);
+    font-weight: 600;
+    font-size: 1.1rem;
+    /*margin-bottom: 12px;*/
+    margin: 10px 0 20px 0;
+    display: block;
+}
+
+.btn-add {
+    /*background: var(--verde);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;*/
+    background: var(--verde);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+    align-self: center; 
+    width: fit-content; 
+    margin-top: auto;
+}
+
+.btn-add:hover {
+    background: #6e7d53; /* Un verde un poco más oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* RESUMEN CARRITO */
+.carrito-resumen {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 2000;
+    display: none;
+    width: 280px;
+    max-height: 400px;
+    overflow-y: auto;
+    /*position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 1500;
+    display: none;
+    text-align: center;*/
+}
+
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+}
+
+#lista-carrito li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+}
+
+.btn-remove {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin-left: 10px;
+}
+
+.btn-whatsapp-compra {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* RESPONSIVE PARA DESKTOP */
+@media (min-width: 768px) {
+    .galeria-scroll img { flex: 0 0 320px; }
+    .productos-grid { grid-template-columns: repeat(4, 1fr); }
+    .producto-card { min-height: 450px; }
+}
+
+@media (min-width: 900px) {
+    .productos-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 productos por fila */
+        gap: 30px;
+    }
+
+    .producto-card {
+        padding-bottom: 30px; /* Un poco más de espacio en PC */
+    }
+    
+    .producto-card img {
+        height: 250px;
+    }
+}
+
 
 /*ICONO WPP*/
 .wpp-flotante {
@@ -278,36 +624,29 @@ footer span {
 RESPONSIVE
 */
 @media (max-width: 768px) {
-    .section {
+    /*.section {
         flex-direction: column;
         padding: 3rem 1.5rem;
         text-align: center; 
         align-items: center;
+    }*/
+
+    .section-autor, 
+    .pintura {
+        flex-direction: column; /* En móvil, todo uno abajo del otro */
+        text-align: center;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
     }
 
-    .galeria {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px;
+    .img-representativa img {
+        height: 400px;
         width: 100%;
     }
 
-    .galeria img{
-        object-fit: cover;
-    }
-
-    .galeria-totes {
-        display: flex;
-        flex-wrap: nowrap; 
-        overflow-x: auto;  
-        scroll-snap-type: x mandatory; 
-        gap: 15px;
-        padding: 10px;
-        justify-content: flex-start; 
-    }
-
-    .galeria-totes img {
-        flex: 0 0 70%; 
-        scroll-snap-align: center;
+    /* En móvil quitamos el reverse para que la lectura sea fluida */
+    .pintura {
+        flex-direction: column;
     }
 
     .video-container {
@@ -317,6 +656,39 @@ RESPONSIVE
 
     .wpp-flotante {
         opacity: 1;
+    }
+
+    #pintura {
+        flex-direction: column-reverse !important;
+    }
+
+    /* Botánica: Foto centrada y con un marco elegante */
+    .botanica .img-representativa img {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    /* Pintura: Foto a "sangre" (que toque los bordes de la pantalla) */
+    .pintura .img-representativa {
+        margin: 0 -1.5rem; /* Esto anula el padding lateral del contenedor */
+    }
+    .pintura .img-representativa img {
+        border-radius: 0; /* Look más cinematográfico */
+        height: 300px;
+    }
+
+    .totes .text {
+        background: var(--arena);
+        padding: 2rem;
+        width: 90%;
+        margin: -40px auto 0; /* Sube el texto para que pise la foto */
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    
+    .totes .img-representativa {
+        z-index: 1;
     }
 }
 

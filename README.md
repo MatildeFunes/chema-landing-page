@@ -12,7 +12,7 @@ Chema es un proyecto que une la naturaleza con el arte textil. Esta landing page
 * **Impresión Botánica:** La esencia de las plantas en la tela.
 * **Arte Textil:** Prendas pintadas a mano que trascienden el lienzo.
 * **Consumo Consciente:** Tote bags artesanales y duraderas.
-
+* **Compras:** Tienda para que los/las clientes puedan comprar online.
 ---
 
 ## Tecnologías Utilizadas
@@ -23,7 +23,7 @@ Para este desarrollo me enfoqué en las bases del desarrollo web moderno, priori
 * **CSS3:** * **Flexbox & Grid:** Para la organización de galerías y secciones.
     * **Diseño Responsive:** Adaptación total para móviles y tablets.
     * **Variables CSS:** Para una gestión de colores coherente con la marca.
-* **JavaScript:** Implementación de interactividad en la sección de ferias.
+* **JavaScript:** Implementación de interactividad en la sección de experiencias, Carrito de compras, Reproduccion de videos
 * **FontAwesome:** Iconografía para redes sociales.
 * **Google Fonts:** Tipografías *Montserrat* y *Playfair Display*.
 
@@ -31,9 +31,9 @@ Para este desarrollo me enfoqué en las bases del desarrollo web moderno, priori
 
 ## Características Destacadas
 
-* **Diseño Responsive:** La página se adapta fluidamente. En móviles, las galerías se transforman en carruseles o cuadrículas de dos columnas para mejorar la navegación táctil.
+* **Diseño Responsive:** La página se adapta fluidamente.  
 * **Botón Flotante de WhatsApp:** Acceso directo a consultas en cualquier parte del sitio.
-* **Galería Dinámica:** Uso de `object-fit` y `aspect-ratio` para mantener la estética visual sin importar las proporciones de las fotos originales.
+
 
 ---
 
@@ -46,7 +46,7 @@ Puedes visitar la versión en vivo del sitio haciendo clic aquí:
 
 ##  Autor
 
-**Matilde Funes** *Estudiante de Ingeniería en Sistemas - UTN Mendoza* [LinkedIn](www.linkedin.com/in/matilde-funes) | [GitHub](https://github.com/MatildeFunes/chema-landing-page)
+**Matilde Funes** *Estudiante de Licenciatura en Informatica y desarrollo de software* [LinkedIn](www.linkedin.com/in/matilde-funes) | [GitHub](https://github.com/MatildeFunes/chema-landing-page)
 
 ---
 *Este proyecto fue realizado con amor por la naturaleza y el código.*
