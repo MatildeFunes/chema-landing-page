@@ -624,16 +624,17 @@ footer span {
 RESPONSIVE
 */
 @media (max-width: 768px) {
-    /*.section {
+    .section {
         flex-direction: column;
-        padding: 3rem 1.5rem;
+        padding: 4rem 1.5rem;
         text-align: center; 
         align-items: center;
-    }*/
+        gap: 3rem;
+    }
 
     .section-autor, 
     .pintura {
-        flex-direction: column; /* En móvil, todo uno abajo del otro */
+        flex-direction: column; 
         text-align: center;
         padding: 4rem 1.5rem;
         gap: 3rem;
