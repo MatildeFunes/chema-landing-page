@@ -3,14 +3,6 @@ CONFIGURACIÓN BASE
  */
 html {
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-}
-body{
-    /* Forzamos a que ignore filtros de ahorro de energía en algunos navegadores */
-    color-interpolation-filters: optimizeLegibility;
 }
 
 html, body {
@@ -596,19 +588,43 @@ RESPONSIVE
 */
 @media (max-width: 768px) {
     :root {
-        /* Un arena un poco más saturado/claro para compensar el brillo del celu */
-        --arena: #EBE4D3; 
+        /* Un arena más "crema" y menos "gris" */
+        --arena: #F2EFE4; 
+        
+        /* Un blanco puro para evitar que el navegador lo ponga gris */
+        --blanco: #FFFFFF; 
+        
+        /* Un verde más vibrante (para que no parezca marrón) */
+        --verde: #9BB074; 
+        
+        /* Un terracota con más luz (más tirando a coral/arcilla clara) */
+        --terracota: #D17B5D; 
+        
+        /* El gris lo aclaramos un poco para que sea legible y no negro total */
+        --gris: #5A5A5A;
+    }
+
+    /* FORZAR FONDO CLARO */
+    body {
+        background-color: var(--blanco) !important;
+        /* Quitamos sombras pesadas que en el celu se ven como manchas oscuras */
+        box-shadow: none !important;
+    }
+
+    /* Si las fotos se ven oscuras, les subimos el brillo por código */
+    img {
+        filter: brightness(1.05) contrast(0.95);
+        /* Esto compensa el exceso de contraste de las pantallas OLED */
+    }
+
+    .hero-content {
+        background: rgba(255, 255, 255, 0.95) !important; /* Casi blanco puro */
+        backdrop-filter: none; /* A veces el desenfoque oscurece la vista en móviles */
+        border: 1px solid var(--arena);
     }
 
         .menu-toggle {
         display: flex; /* Aparece en celu */
-    }
-
-    .hero {
-        /* Para que no haya filtros de opacidad heredados */
-        filter: brightness(1) contrast(1);
-        /*Asegurate de que no haya un linear-gradient oscureciendo la foto */
-        background-blend-mode: normal;
     }
 
     .nav-links {
