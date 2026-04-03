@@ -623,11 +623,6 @@ RESPONSIVE
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    .hero {
-        background-attachment: scroll; 
-        background-position: 50% center; 
-    }
-
     .section {
         flex-direction: column;
         padding: 4rem 1.5rem;
@@ -700,6 +695,10 @@ RESPONSIVE
 @media (max-width: 480px) {
     .hero-btn {
         width: 100%; 
+    }
+
+    .hero {
+        background-image: url("herocelu.png"); 
     }
 
     .wpp-flotante {
