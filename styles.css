@@ -3,6 +3,14 @@ CONFIGURACIÓN BASE
  */
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+}
+body{
+    /* Forzamos a que ignore filtros de ahorro de energía en algunos navegadores */
+    color-interpolation-filters: optimizeLegibility;
 }
 
 html, body {
@@ -587,8 +595,20 @@ footer span {
 RESPONSIVE
 */
 @media (max-width: 768px) {
+    :root {
+        /* Un arena un poco más saturado/claro para compensar el brillo del celu */
+        --arena: #EBE4D3; 
+    }
+
         .menu-toggle {
         display: flex; /* Aparece en celu */
+    }
+
+    .hero {
+        /* Para que no haya filtros de opacidad heredados */
+        filter: brightness(1) contrast(1);
+        /*Asegurate de que no haya un linear-gradient oscureciendo la foto */
+        background-blend-mode: normal;
     }
 
     .nav-links {
@@ -698,7 +718,7 @@ RESPONSIVE
     }
 
     .hero {
-        background-image: url("herocelu.png"); 
+        background-image: url("heroceluvertical.png"); 
     }
 
     .wpp-flotante {
