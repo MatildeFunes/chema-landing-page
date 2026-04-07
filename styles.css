@@ -523,6 +523,12 @@ grilla de 2 columnas en tienda*/
     /* --- NAVBAR / HAMBURGUESA --- */
     .menu-toggle {
         display: flex;
+        position: relative;
+        z-index: 2100; /* por encima del panel del menú */
+    }
+
+    .menu-toggle.is-active .bar {
+    background-color: var(--gris);
     }
 
     .nav-links {
@@ -795,14 +801,20 @@ grilla de 2 columnas más compacta*/
         right: 20px;
     }
 
-    /* --- CARRITO (más compacto) --- */
+    /* --- CARRITO --- */
     .carrito-resumen {
-        width: calc(100vw - 32px);
-        right: 16px;
-        left: 16px;
-        bottom: 16px;
-        max-height: 60vh;
-    }
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    bottom: auto;
+    left: auto;
+    width: 260px;
+    max-height: 60vh;
+    border-radius: 12px;
+    padding: 15px;
+    overflow-y: auto;
+    z-index: 3000;
+}
 }
 
 
