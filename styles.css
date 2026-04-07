@@ -72,10 +72,6 @@ HERO
     font-weight: 500;
 }
 
-/*.hero p {
-    font-size: 1.1rem;
-}*/
-
 /* NAVBAR */
 .navbar {
     position: fixed;
@@ -219,25 +215,6 @@ HERO
     margin-bottom: 1rem;
 }
 
-/* 
-GALERÍAS (COMÚN)
-*/
-/*.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
-    position: relative;
-}
-
-.galeria img,
-.galeria-totes img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-}*/
 
 /* IMAGEN ÚNICA REPRESENTATIVA */
 .img-representativa {
@@ -260,25 +237,7 @@ GALERÍAS (COMÚN)
     transform: scale(1.02);
 }
 
-
-/*
-GALERÍA TOTES
- */
-/*.galeria-totes {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.galeria-totes img{
-    max-width: 220px;
-}*/
-
-/* 
-FERIAS - VIDEOS
-*/
+/* FERIAS - VIDEOS*/
 .ferias {
     background-color: var(--blanco);
 }
@@ -334,14 +293,6 @@ FERIAS - VIDEOS
 }
 
 .producto-card {
-    /*background: #fff;
-    border: 1px solid var(--arena);
-    padding: 12px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%; /* Para que todas midan lo mismo en la misma fila */
     background: #fff;
     border-radius: 12px;
     border: 1px solid var(--arena);
@@ -364,7 +315,6 @@ FERIAS - VIDEOS
     object-fit: contain;
     background-color: #f9f9f9; 
     padding: 10px; /* Espacio para que la foto respire dentro del cuadro */
-    /*border-radius: 6px;*/
 }
 
 .info-prod {
@@ -377,12 +327,9 @@ FERIAS - VIDEOS
     text-align: center;
 }
 
-.producto-card h3 { 
-    /*font-size: 0.9rem;
-    margin: 10px 0;*/
+.producto-card h3 {
     font-size: 0.9rem;
     color: var(--gris);
-    /*margin-bottom: 8px;*/
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     min-height: 2.4em;
@@ -394,25 +341,14 @@ FERIAS - VIDEOS
     width: 100%;
 }
 .precio { 
-    /*color: var(--terracota);
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;*/
     color: var(--terracota);
     font-weight: 600;
     font-size: 1.1rem;
-    /*margin-bottom: 12px;*/
     margin: 10px 0 20px 0;
     display: block;
 }
 
 .btn-add {
-    /*background: var(--verde);
-    color: white;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;*/
     background: var(--verde);
     color: white;
     border: none;
@@ -448,16 +384,6 @@ FERIAS - VIDEOS
     width: 280px;
     max-height: 400px;
     overflow-y: auto;
-    /*position: fixed;
-    bottom: 100px;
-    right: 20px;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    z-index: 1500;
-    display: none;
-    text-align: center;*/
 }
 
 #lista-carrito {
@@ -497,29 +423,6 @@ FERIAS - VIDEOS
     font-weight: 600;
     cursor: pointer;
 }
-
-/* RESPONSIVE PARA DESKTOP */
-@media (min-width: 768px) {
-    .galeria-scroll img { flex: 0 0 320px; }
-    .productos-grid { grid-template-columns: repeat(4, 1fr); }
-    .producto-card { min-height: 450px; }
-}
-
-@media (min-width: 900px) {
-    .productos-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 productos por fila */
-        gap: 30px;
-    }
-
-    .producto-card {
-        padding-bottom: 30px; /* Un poco más de espacio en PC */
-    }
-    
-    .producto-card img {
-        height: 250px;
-    }
-}
-
 
 /*ICONO WPP*/
 .wpp-flotante {
@@ -583,72 +486,66 @@ footer span {
     font-style: italic;
 }
 
-/* 
-RESPONSIVE
-*/
-@media (max-width: 768px) {
+/*RESPONSIVE*/
+/*NIVEL 1 — DESKTOP (≥ 901px)
+Todo en su posición original, 4 columnas en tienda */
+@media (min-width: 1025px) {
+    .productos-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .producto-card {
+        min-height: 450px;
+        padding-bottom: 30px;
+    }
+
+    .producto-card img {
+        height: 250px;
+    }
+}
+
+
+/*NIVEL 2 — TABLET (481px a 900px)
+Menú hamburguesa activo, layout en columna para secciones,
+grilla de 2 columnas en tienda*/
+@media (max-width: 1024px) {
+
+    /* --- VARIABLES --- */
     :root {
-        /* Un arena más "crema" y menos "gris" */
-        --arena: #F2EFE4; 
-        
-        /* Un blanco puro para evitar que el navegador lo ponga gris */
-        --blanco: #FFFFFF; 
-        
-        /* Un verde más vibrante (para que no parezca marrón) */
-        --verde: #9BB074; 
-        
-        /* Un terracota con más luz (más tirando a coral/arcilla clara) */
-        --terracota: #D17B5D; 
-        
-        /* El gris lo aclaramos un poco para que sea legible y no negro total */
-        --gris: #5A5A5A;
+        --arena: #EDE8D8;
+        --blanco: #FAFAF7;
+        --verde: #8A9B68;
+        --terracota: #C46A4A;
+        --gris: #4A4A4A;
     }
 
-    /* FORZAR FONDO CLARO */
-    body {
-        background-color: var(--blanco) !important;
-        /* Quitamos sombras pesadas que en el celu se ven como manchas oscuras */
-        box-shadow: none !important;
-    }
-
-    /* Si las fotos se ven oscuras, les subimos el brillo por código */
-    img {
-        filter: brightness(1.05) contrast(0.95);
-        /* Esto compensa el exceso de contraste de las pantallas OLED */
-    }
-
-    .hero-content {
-        background: rgba(255, 255, 255, 0.95) !important; /* Casi blanco puro */
-        backdrop-filter: none; /* A veces el desenfoque oscurece la vista en móviles */
-        border: 1px solid var(--arena);
-    }
-
-        .menu-toggle {
-        display: flex; /* Aparece en celu */
+    /* --- NAVBAR / HAMBURGUESA --- */
+    .menu-toggle {
+        display: flex;
     }
 
     .nav-links {
         position: fixed;
-        right: -100%; /* Escondido a la derecha */
+        right: -100%;
         top: 0;
         height: 100vh;
-        width: 70%; /* Ocupa gran parte de la pantalla */
+        width: 60%;
+        max-width: 320px;
         background-color: var(--blanco);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        transition: 0.4s ease;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
-        z-index: 1000;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.08);
+        z-index: 2000;
     }
 
-    /* Clase que se activa con JS */
     .nav-links.active {
         right: 0;
     }
 
-    /* Animación de la hamburguesa a una 'X' */
     .menu-toggle.is-active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
@@ -659,92 +556,258 @@ RESPONSIVE
         transform: translateY(-7px) rotate(-45deg);
     }
 
+    /* --- HERO --- */
+    .hero-content {
+        padding: 2rem;
+        max-width: 90%;
+    }
+
+    /* --- SECCIONES AUTOR --- */
+    .section-autor{
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5vw;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .section-autor .text {
+        max-width: 100%;
+    }
+
+    .section-autor h2 {
+        font-size: 1.8rem;
+    }
+
+    .pintura {
+    flex-direction: column-reverse;
+    }
+
+    /* Imagen representativa — altura cómoda para tablet */
+    .img-representativa img {
+        height: 420px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    /* Totes: sin efecto de superposición en tablet (fallaba) */
+    .totes .text {
+        background: transparent;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        position: static;
+        box-shadow: none;
+    }
+
+    /* --- SECTION GENÉRICA --- */
     .section {
         flex-direction: column;
-        padding: 4rem 1.5rem;
-        text-align: center; 
+        padding: 3rem 5vw;
+        gap: 2rem;
         align-items: center;
-        gap: 3rem;
-    }
-
-    .section-autor, 
-    .pintura {
-        flex-direction: column; 
         text-align: center;
-        padding: 4rem 1.5rem;
-        gap: 3rem;
     }
 
-    .img-representativa img {
-        height: 400px;
+    /* --- VIDEO --- */
+    .video-container {
+        aspect-ratio: 16 / 9;
+        max-height: 50vh;
+        border-radius: 12px;
+    }
+
+    /* --- TIENDA --- */
+    .section-tienda {
+        padding: 3rem 5vw;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .producto-card img {
+        height: 200px;
+    }
+
+    /* --- WPP --- */
+    .wpp-flotante {
+        width: 54px;
+        height: 54px;
+        font-size: 26px;
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+
+/*NIVEL 3 — CELULARES (≤ 480px)
+    para pantallas chicas, hero vertical,
+grilla de 2 columnas más compacta*/
+@media (max-width: 480px) {
+
+    /* --- VARIABLES (más vibración para pantallas OLED) --- */
+    :root {
+        --arena: #F2EFE4;
+        --blanco: #FFFFFF;
+        --verde: #9BB074;
+        --terracota: #D17B5D;
+        --gris: #5A5A5A;
+    }
+
+    /* --- BODY --- */
+    body {
+        background-color: var(--blanco) !important;
+        box-shadow: none !important;
+    }
+
+    /* Compensar contraste OLED */
+    img {
+        filter: brightness(1.05) contrast(0.95);
+    }
+
+    /* --- HERO --- */
+    .hero {
+        background-image: url("heroceluvertical.png");
+    }
+
+    .hero-content {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: none;
+        border: 1px solid var(--arena);
+        padding: 1.5rem;
+        max-width: 88%;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+        padding: 1.2rem 5vw;
+    }
+
+    .nav-links {
+        width: 75%;
+    }
+
+    /* --- SECCIONES AUTOR --- */
+    .section-autor{
+        padding: 3rem 1.2rem;
+        gap: 2rem;
+    }
+
+    .section-autor h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Botánica: imagen centrada con aire lateral */
+    .botanica .img-representativa img {
+        width: 88%;
+        height: 350px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .pintura {
+    flex-direction: column-reverse;
+    }
+
+    /* Pintura: imagen a sangre (toca los bordes) */
+    .pintura .img-representativa {
+        margin: 0 -1.2rem;
+        width: calc(100% + 2.4rem);
+    }
+
+    .pintura .img-representativa img {
+        border-radius: 0;
+        height: 280px;
+        max-width: 100%;
         width: 100%;
     }
 
-    /* En móvil quitamos el reverse para que la lectura sea fluida */
-    .pintura {
-        flex-direction: column;
-    }
-
-    .video-container {
-        aspect-ratio: 9 / 16; 
-        max-height: 60vh;
-    }
-
-    .wpp-flotante {
-        opacity: 1;
-    }
-
-    #pintura {
-        flex-direction: column-reverse !important;
-    }
-
-    /* Botánica: Foto centrada y con un marco elegante */
-    .botanica .img-representativa img {
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    /* Pintura: Foto a "sangre" (que toque los bordes de la pantalla) */
-    .pintura .img-representativa {
-        margin: 0 -1.5rem; /* Esto anula el padding lateral del contenedor */
-    }
-    .pintura .img-representativa img {
-        border-radius: 0; /* Look más cinematográfico */
-        height: 300px;
+    /* Totes: imagen normal, sin superposición */
+    .totes .img-representativa img {
+        height: 320px;
+        width: 100%;
     }
 
     .totes .text {
-        background: var(--arena);
-        padding: 2rem;
-        width: 90%;
-        margin: -40px auto 0; /* Sube el texto para que pise la foto */
-        position: relative;
-        z-index: 2;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-    
-    .totes .img-representativa {
-        z-index: 1;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-btn {
-        width: 100%; 
+        background: transparent;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        position: static;
+        box-shadow: none;
     }
 
-    .hero {
-        background-image: url("heroceluvertical.png"); 
+    /* --- SECTION GENÉRICA --- */
+    .section {
+        padding: 2.5rem 1.2rem;
     }
 
+    /* --- VIDEO --- */
+    .video-container {
+        aspect-ratio: 9 / 16;
+        max-height: 55vh;
+        border-radius: 10px;
+    }
+
+    /* --- TIENDA --- */
+    .section-tienda {
+        padding: 2.5rem 1rem;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .producto-card img {
+        height: 150px;
+    }
+
+    .producto-card h3 {
+        font-size: 0.8rem;
+    }
+
+    .precio {
+        font-size: 1rem;
+    }
+
+    .btn-add {
+        font-size: 0.7rem;
+        padding: 7px 14px;
+    }
+
+    /* --- WPP --- */
     .wpp-flotante {
         width: 50px;
         height: 50px;
+        font-size: 24px;
         bottom: 20px;
         right: 20px;
-        font-size: 25px;
+    }
+
+    /* --- CARRITO (más compacto) --- */
+    .carrito-resumen {
+        width: calc(100vw - 32px);
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+        max-height: 60vh;
     }
 }
+
+
+
+
 
 
 
